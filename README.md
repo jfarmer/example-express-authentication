@@ -32,6 +32,7 @@ This is a minimal example of how to implement user authentication in a web appli
    ```
 
    This command runs `npx knex migrate:latest`. You can also use `knex` directly. See `npx knex --help`.
+
 1. Launch the web applciation by running:
 
    ```console
@@ -39,6 +40,7 @@ This is a minimal example of how to implement user authentication in a web appli
    ```
 
    This uses [nodemon][url-nodemon] to automatically reload your web application whenever you save a file.
+
 1. Visit <http://localhost:3000> to see the web application!
 
 ## Passwords
