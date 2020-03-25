@@ -43,6 +43,16 @@ This is a minimal example of how to implement user authentication in a web appli
 
 1. Visit <http://localhost:3000> to see the web application!
 
+## Custom Middleware
+
+The `loadUser.js` file contains an example of custom middleware. `loadUser` looks at the session to check if a user ID is present. If it is, we try to find the corresponding user.
+
+If we do, we set `request.user` to the corresponding user. This is then available to all our route handlers.
+
+To "log in", we have to set `request.session.userId`. To "log out", we have to unset it.
+
+The session data is stored using [HTTP cookies][wiki-http-cookie].
+
 ## Passwords
 
 By default, [objection-password][url-objection-password] uses [bcrypt][wiki-bcrypt] to hash user passwords. We don't want to store the raw password text in the database, but we still need to verify quickly whether a user entered a valid password.
@@ -59,3 +69,4 @@ See the Wikipedia article on [hash functions and password verification][wiki-has
 [url-nodemon]: https://nodemon.io/
 [wiki-bcrypt]: https://en.wikipedia.org/wiki/Bcrypt
 [wiki-hash-password]: https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification
+[wiki-http-cookie]: https://en.wikipedia.org/wiki/HTTP_cookie
