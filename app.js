@@ -12,7 +12,7 @@ let app = express();
 app.root = (...args) => path.join(__dirname, ...args);
 
 // Helper functions to check which environment we're in
-app.inEnvironment = env => app.get('env') === env;
+app.inEnvironment = (env) => app.get('env') === env;
 app.inProduction = () => app.inEnvironment('production');
 app.inTesting = () => app.inEnvironment('testing');
 app.inDevelopment = () => app.inEnvironment('development');
@@ -52,16 +52,19 @@ let knex = Knex(dbConfig[process.env.NODE_ENV]);
 let { Model } = require('objection');
 Model.knex(knex);
 
+let loadUser = require('./loadUser');
+app.use(loadUser);
+
 let routes = require('./routes');
 app.use('/', routes);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
