@@ -3,7 +3,6 @@
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
-// let cookieParser = require('cookie-parser');
 let cookieSession = require('cookie-session');
 let logger = require('morgan');
 
