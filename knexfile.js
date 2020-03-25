@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/social_wall_development',
+    connection: 'postgres://localhost:5432/express_authentication_development',
     debug: true,
     migrations: {
       tableName: 'knex_migrations',
@@ -10,7 +10,7 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/social_wall_test',
+    connection: 'postgres://localhost:5432/express_authentication_test',
     migrations: {
       tableName: 'knex_migrations',
     },
