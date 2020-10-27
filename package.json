@@ -52,5 +52,8 @@
   "bugs": {
     "url": "https://github.com/jfarmer/example-express-authentication/issues"
   },
-  "homepage": "https://github.com/jfarmer/example-express-authentication#readme"
+  "homepage": "https://github.com/jfarmer/example-express-authentication#readme",
+  "engines": {
+    "node": "14.12.0"
+  }
 }
