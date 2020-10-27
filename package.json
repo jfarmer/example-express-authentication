@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npx cross-env DEBUG=\"${DEBUG:=example-express-authentication:*}\" node ./bin/www",
     "dev": "nodemon",
-    "db:create": "createdb express_authentication_development && createdb express_authentication_test",
-    "db:drop": "dropdb express_authentication_development && dropdb express_authentication_test",
+    "db:create": "createdb express_authentication_development",
+    "db:drop": "dropdb express_authentication_development",
     "db:migrate": "knex migrate:latest"
   },
   "dependencies": {
